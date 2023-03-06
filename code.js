@@ -21,6 +21,12 @@ function setup () {
   let r = random(100);
   main_canvas.parent('canvasContainer');
   frameRate(24 * buffersPerFrame);
+  for (let y = 0; y < gridHeight; y++) {
+    grid[y] = [];
+    for (let x = 0; x < gridWidth; x++) {
+      grid[y][x] = getRandomChar();
+    }
+  }
 }
 
 function mousePressed(){
