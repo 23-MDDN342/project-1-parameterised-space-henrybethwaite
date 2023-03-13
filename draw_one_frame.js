@@ -4,7 +4,7 @@ var a=100;
 var b=100;
 
 function draw_one_frame() {
-  //background(255);
+background(36, 115, 242);
   x+=2;
   y+=2;
 	a-=2;
@@ -33,18 +33,18 @@ function draw_one_frame() {
 }
 
 function drawtriangle(x,y,r){
-	triangle(x, y, x+7*r, y-13.75*r, x+14*r, y);
-}
+triangle(x, y, x+7*r, y-13.75*r, x+14*r, y);
+ }
 
-function drawflower(i,k){
+ function drawflower(i,k){
 		if(i%2==1){
 			fill(255,(k*0.4)%255,30);
 			stroke(k%255,255,0);
-			arc(0,0,150+i+150*sin(k*PI/24),150,0,PI / 40);
-		}
+ 			arc(0,0,150+i+150*sin(k*PI/24),150,0,PI / 40);
+	}
 		else{
-			fill(k%255,0,255);
-			stroke(0,(k*0.4)%255,255);
+		fill(k%255,0,255);
+		stroke(0,(k*0.4)%255,255);
 			arc(0,0,(100+100*cos(k*PI/24))%255,50,0,PI / 20);
 		}
 }
