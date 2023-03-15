@@ -8,6 +8,7 @@ function draw_one_frame(cur_frac) {
 
 fill(30);
 rect(0, 0, width+1, height+1);
+textSize(width/100);
 
 /*----method for altering cur_frac made with help 
 ------from my friend Popopz */
@@ -16,8 +17,6 @@ loop_frac = cur_frac*24;
 if(loop_frac > 12){
   loop_frac = 12 - (loop_frac % 12)
 }
-
-//console.log(cur_frac);
 
 for (let j = 1 ; j < 35 ; j++) {
     for (let i = 1 ; i < 94 ; i++) {
