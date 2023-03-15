@@ -28,7 +28,7 @@ for (let j = 1 ; j < 35 ; j++) {
         if ((xpos+(xstep*i)) == collum || (xpos+(xstep*i)) == collum+xstep || (xpos+(xstep*i)) == collum-xstep){
         fill(255);
         text(char[(int(noiseTerrain))+2],xpos+(xstep*i), (ypos+(ystep*j))-25, 20, 20);
-        } else if((xpos+(xstep*i)) == collum+(xstep*2) || (xpos+(xstep*i)) == collum+(-xstep*2)){
+        } else if((xpos+(xstep*i)) == collum+(xstep*2) || (xpos+(xstep*i)) == collum+(-xstep*2) || (xpos+(xstep*i)) == collum+(-xstep*4) || (xpos+(xstep*i)) == collum+(xstep*4)){
             text(char[(int(noiseTerrain))+1],xpos+(xstep*i), (ypos+(ystep*j))-15, 20, 20);
             } else {
                 fill(255);
