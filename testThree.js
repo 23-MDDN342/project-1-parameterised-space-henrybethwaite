@@ -21,7 +21,7 @@ function draw_one_frame() {
 
 function calcWave() {
   theta += 0.26;
-  let thetachange = theta;
+  thetachange = theta;
   for (let i = 0; i < yvalues.length; i++) {
     yvalues[i] = sin(thetachange) * amplitude;
     thetachange += dx;
@@ -34,10 +34,10 @@ function renderWave() {
   textSize(width/100);
   for (let x = -100 ; x < yvalues.length; x++) {
     for (let j = 0; j < 30; j++) {
-      if((height / 2 + yvalues[x+j]) < (PI/2-thetachange) && (height / 2 + yvalues[x+j]) > (3*PI/2-thetachange)){
-        text(char[1], (x+45) * xspacing, height / 2 + yvalues[x+j], 16, 16);
+      if((j * yvalues[x+j]) % 100 > 50 || (-j * yvalues[x+j]) % 100 > 50){
+        text(char[0], x * xspacing + width/2.5, height / 2 + yvalues[x+j], 16, 16);
         }else{
-        text(char[1], (x+45) * xspacing, height / 2 + yvalues[x+j], 16, 16);
+        text(char[4], x * xspacing + width/2.5, height / 2 + yvalues[x+j], 16, 16);
         }
     }
   }
