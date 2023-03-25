@@ -22,6 +22,8 @@ if (collum > width){
     collum = 5;
 }
 
+textSize(width/100);
+
 for (let j = 1 ; j < 35 ; j++) {
     for (let i = 1 ; i < 94 ; i++) {
         let noiseTerrain = getNoiseValue(xpos*i, ypos*j, 0.5, "gridNoise", 0, 5, 50);

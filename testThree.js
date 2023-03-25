@@ -1,11 +1,10 @@
 let xspacing = 8;
 let w;
 let theta = 0.0;
-let amplitude = 100.0;
-let period = -1500.0;
+let amplitude = 180.0;
+let period = 700;
 let dx;
 let yvalues;
-let char = ['', '.', '-', '+', '%', '▓', '█'];
 let thetachange;
 
 function draw_one_frame() {
@@ -20,8 +19,8 @@ function draw_one_frame() {
 }
 
 function calcWave() {
-  theta += 0.26;
-  let thetachange = theta;
+  theta += 0.1;  //0.26
+  thetachange = theta;
   for (let i = 0; i < yvalues.length; i++) {
     yvalues[i] = sin(thetachange) * amplitude;
     thetachange += dx;
@@ -31,14 +30,10 @@ function calcWave() {
 function renderWave() {
   noStroke();
   fill(255);
-  textSize(width/100);
-  for (let x = -100 ; x < yvalues.length; x++) {
+  textSize(width/200);
+  for (let x = -30 ; x < yvalues.length; x++) {
     for (let j = 0; j < 30; j++) {
-      if((height / 2 + yvalues[x+j]) < (PI/2-thetachange) && (height / 2 + yvalues[x+j]) > (3*PI/2-thetachange)){
-        text(char[1], (x+45) * xspacing, height / 2 + yvalues[x+j], 16, 16);
-        }else{
-        text(char[1], (x+45) * xspacing, height / 2 + yvalues[x+j], 16, 16);
-        }
+        text('+', x * xspacing + width/2.5, height / 2 + yvalues[x+j], 16, 16);
+      }
     }
   }
-}
